@@ -317,7 +317,7 @@ class Pipeline(pipeline.Pipeline):
             elif hasattr(last_step, "fit_transform"):
                 return last_step.fit_transform(Xt, yt, **fit_params)
             else:
-                return last_step.fit(Xt, yt, **fit_params).transform(Xt)
+                return last_step.fit(Xt, yt, **fit_params).transform(Xt, yt)
 
     def fit_resample(self, X, y=None, **fit_params):
         """Fit the model and sample with the final estimator.
